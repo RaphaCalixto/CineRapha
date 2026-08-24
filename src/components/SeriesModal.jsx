@@ -8,7 +8,9 @@ export default function SeriesModal({ series, onClose, onPlayWeb, onPlayNative }
   const seasonsKeys = Object.keys(series.seasons || {}).sort((a, b) => parseInt(a) - parseInt(b));
   const [selectedSeason, setSelectedSeason] = useState(seasonsKeys[0] || '1');
 
-  const currentEpisodes = series.seasons[selectedSeason] || [];
+  const currentEpisodes = (series.seasons[selectedSeason] || [])
+    .slice()
+    .sort((a, b) => a.episode - b.episode);
 
   const seasonPoster = series.season_posters?.[selectedSeason] || series.poster_path;
   const rawBg = seasonPoster || series.backdrop_path || series.poster_path;

@@ -119,15 +119,19 @@ const G_DRIVE_TITLE_MAP = [
 ];
 
 export function parseAnimeEpisodeNumber(fileName, index) {
-  // Strip CRC32 hex hashes like [C6A6D6E4] and codec brackets to prevent false matches
+  // Strip CRC32 hex hashes like [C6A6D6E4], parentheses, and release version tags (e.g. v2, v3)
   const cleanName = fileName
     .replace(/\[[A-F0-9]{8}\]/gi, '')
-    .replace(/\(.*?\)/g, '');
+    .replace(/\(.*?\)/g, '')
+    .replace(/v\d+\b/gi, '');
 
-  const matchSeason = cleanName.match(/S\d+\s*E?(\d{1,3})\b/i);
-  if (matchSeason) return parseInt(matchSeason[1], 10);
+  const matchExplicitSE = cleanName.match(/S\d+\s*E(\d{1,3})/i);
+  if (matchExplicitSE) return parseInt(matchExplicitSE[1], 10);
 
-  const matchEp = cleanName.match(/(?:E|Ep|\s+-\s+)\s*(\d{1,3})\b/i);
+  const matchDashSE = cleanName.match(/S\d+\s*-\s*(\d{1,3})/i);
+  if (matchDashSE) return parseInt(matchDashSE[1], 10);
+
+  const matchEp = cleanName.match(/(?:E|Ep|Epis[oó]dio|\s+-\s+)\s*(\d{1,3})/i);
   if (matchEp) return parseInt(matchEp[1], 10);
 
   const matchBrackets = cleanName.match(/\[(\d{1,3})\]/);

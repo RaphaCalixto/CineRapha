@@ -89,11 +89,11 @@ export default function MovieModal({ movie, onClose, onPlayWeb, onPlayNative, on
             )}
 
             {/* Right Column: Title, Metadata, Overview & Large Buttons */}
-            <div className="flex-1 min-w-0 flex flex-col justify-between self-stretch text-center md:text-left">
+            <div className="flex-1 min-w-0 flex flex-col justify-center text-center md:text-left my-auto space-y-4">
               <div>
-                {/* Source Badge */}
+                {/* Source Badge - Wider & Bold */}
                 <div className="mb-3 flex flex-wrap items-center justify-center md:justify-start gap-2">
-                  <span className="inline-block bg-[#E50914] text-white text-[11px] font-extrabold px-3.5 py-1 rounded-md uppercase tracking-wider shadow-md">
+                  <span className="inline-block bg-[#E50914] text-white text-xs font-black px-6 py-1.5 rounded-lg uppercase tracking-widest shadow-md">
                     DISCO LOCAL
                   </span>
                 </div>

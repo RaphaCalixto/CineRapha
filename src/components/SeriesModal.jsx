@@ -68,11 +68,11 @@ export default function SeriesModal({ series, onClose, onPlayWeb, onPlayNative }
             )}
 
             {/* Right Column: Title, Badges, Synopsis & Season Dropdown */}
-            <div className="flex-1 min-w-0 flex flex-col justify-center text-center md:text-left my-auto space-y-4">
+            <div className="flex-1 min-w-0 flex flex-col justify-between self-stretch text-center md:text-left">
               <div>
-                {/* Source Badge */}
-                <div className="mb-3 flex flex-wrap items-center justify-center md:justify-start gap-2">
-                  <span className="inline-block bg-[#E50914] text-white text-xs font-black px-6 py-1.5 rounded-lg uppercase tracking-widest shadow-md">
+                {/* Source Badge - Increased width & generous padding */}
+                <div className="mb-4 flex flex-wrap items-center justify-center md:justify-start gap-2">
+                  <span className="inline-flex items-center justify-center bg-[#E50914] text-white text-xs font-black px-6 py-1.5 rounded-lg uppercase tracking-widest shadow-lg min-w-[140px]">
                     {isAnime ? 'ANIME' : 'SÉRIE ANIMADA'}
                   </span>
                 </div>

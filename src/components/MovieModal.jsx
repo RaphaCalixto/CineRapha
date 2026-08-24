@@ -89,11 +89,11 @@ export default function MovieModal({ movie, onClose, onPlayWeb, onPlayNative, on
             )}
 
             {/* Right Column: Title, Metadata, Overview & Large Buttons */}
-            <div className="flex-1 min-w-0 flex flex-col justify-center text-center md:text-left my-auto space-y-4">
+            <div className="flex-1 min-w-0 flex flex-col justify-between self-stretch text-center md:text-left">
               <div>
-                {/* Source Badge - Wider & Bold */}
-                <div className="mb-3 flex flex-wrap items-center justify-center md:justify-start gap-2">
-                  <span className="inline-block bg-[#E50914] text-white text-xs font-black px-6 py-1.5 rounded-lg uppercase tracking-widest shadow-md">
+                {/* Source Badge - Increased width & generous padding */}
+                <div className="mb-4 flex flex-wrap items-center justify-center md:justify-start gap-2">
+                  <span className="inline-flex items-center justify-center bg-[#E50914] text-white text-xs font-black px-6 py-1.5 rounded-lg uppercase tracking-widest shadow-lg min-w-[140px]">
                     DISCO LOCAL
                   </span>
                 </div>
@@ -142,49 +142,49 @@ export default function MovieModal({ movie, onClose, onPlayWeb, onPlayNative, on
                   </span>
                 </div>
 
+                {/* MAIN ACTION BUTTONS: Centered Vertically in the Middle of the Card */}
+                <div className="flex flex-col sm:flex-row items-stretch gap-4 my-6 py-2">
+                  {/* Button 1: Assistir agora (Web Browser Player) */}
+                  <button
+                    onClick={() => onPlayWeb(movie)}
+                    className="flex-1 bg-gradient-to-r from-[#E50914] to-[#B20710] hover:from-[#f6121d] hover:to-[#c80812] active:scale-[0.98] text-white p-4 sm:p-5 rounded-2xl flex items-center justify-center sm:justify-start gap-4 shadow-xl shadow-[#E50914]/30 border border-red-500/30 transition-all duration-300 cursor-pointer group"
+                  >
+                    <div className="w-11 h-11 rounded-full bg-white/20 group-hover:bg-white/30 flex items-center justify-center shrink-0 transition-colors">
+                      <Play className="w-6 h-6 fill-white text-white translate-x-0.5" />
+                    </div>
+                    <div className="text-left">
+                      <span className="text-base sm:text-lg font-black text-white leading-tight block tracking-wide">
+                        Assistir agora
+                      </span>
+                      <span className="text-xs text-white/80 font-medium block mt-0.5">
+                        Reproduzir no navegador
+                      </span>
+                    </div>
+                  </button>
+
+                  {/* Button 2: Abrir no Windows (Local Media Player) */}
+                  <button
+                    onClick={() => onPlayNative(movie)}
+                    className="flex-1 bg-white/10 hover:bg-white/20 active:scale-[0.98] text-white p-4 sm:p-5 rounded-2xl flex items-center justify-center sm:justify-start gap-4 backdrop-blur-md border border-white/20 shadow-xl transition-all duration-300 cursor-pointer group"
+                  >
+                    <div className="w-11 h-11 rounded-full bg-white/10 group-hover:bg-white/20 flex items-center justify-center shrink-0 transition-colors">
+                      <WindowsIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="text-left">
+                      <span className="text-base sm:text-lg font-black text-white leading-tight block tracking-wide">
+                        Abrir no Windows
+                      </span>
+                      <span className="text-xs text-neutral-300 font-medium block mt-0.5">
+                        Assistir no seu player local
+                      </span>
+                    </div>
+                  </button>
+                </div>
+
                 {/* Movie Synopsis */}
-                <p className="text-sm sm:text-base text-neutral-300 leading-relaxed font-normal line-clamp-4 md:line-clamp-5 mb-8 max-w-2xl">
+                <p className="text-sm sm:text-base text-neutral-300 leading-relaxed font-normal line-clamp-3 md:line-clamp-4 mt-2 max-w-2xl">
                   {movie.overview || 'Nenhuma sinopse disponível para este filme no momento.'}
                 </p>
-              </div>
-
-              {/* MAIN ACTION BUTTONS: Big & Wide Side-by-Side */}
-              <div className="flex flex-col sm:flex-row items-stretch gap-4 pt-2">
-                {/* Button 1: Assistir agora (Web Browser Player) */}
-                <button
-                  onClick={() => onPlayWeb(movie)}
-                  className="flex-1 bg-gradient-to-r from-[#E50914] to-[#B20710] hover:from-[#f6121d] hover:to-[#c80812] active:scale-[0.98] text-white p-4 sm:p-5 rounded-2xl flex items-center justify-center sm:justify-start gap-4 shadow-xl shadow-[#E50914]/30 border border-red-500/30 transition-all duration-300 cursor-pointer group"
-                >
-                  <div className="w-11 h-11 rounded-full bg-white/20 group-hover:bg-white/30 flex items-center justify-center shrink-0 transition-colors">
-                    <Play className="w-6 h-6 fill-white text-white translate-x-0.5" />
-                  </div>
-                  <div className="text-left">
-                    <span className="text-base sm:text-lg font-black text-white leading-tight block tracking-wide">
-                      Assistir agora
-                    </span>
-                    <span className="text-xs text-white/80 font-medium block mt-0.5">
-                      Reproduzir no navegador
-                    </span>
-                  </div>
-                </button>
-
-                {/* Button 2: Abrir no Windows (Local Media Player) */}
-                <button
-                  onClick={() => onPlayNative(movie)}
-                  className="flex-1 bg-white/10 hover:bg-white/20 active:scale-[0.98] text-white p-4 sm:p-5 rounded-2xl flex items-center justify-center sm:justify-start gap-4 backdrop-blur-md border border-white/20 shadow-xl transition-all duration-300 cursor-pointer group"
-                >
-                  <div className="w-11 h-11 rounded-full bg-white/10 group-hover:bg-white/20 flex items-center justify-center shrink-0 transition-colors">
-                    <WindowsIcon className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="text-left">
-                    <span className="text-base sm:text-lg font-black text-white leading-tight block tracking-wide">
-                      Abrir no Windows
-                    </span>
-                    <span className="text-xs text-neutral-300 font-medium block mt-0.5">
-                      Assistir no seu player local
-                    </span>
-                  </div>
-                </button>
               </div>
             </div>
           </div>

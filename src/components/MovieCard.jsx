@@ -20,7 +20,8 @@ export default function MovieCard({ movie, onOpenDetails }) {
             alt={movie.title}
             onError={() => setImageError(true)}
             loading="lazy"
-            className="w-full h-full object-cover"
+            draggable="false"
+            className="w-full h-full object-cover select-none pointer-events-none"
           />
         ) : (
           <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-neutral-800 via-neutral-900 to-black">

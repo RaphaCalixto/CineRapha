@@ -142,8 +142,13 @@ export default function MovieModal({ movie, onClose, onPlayWeb, onPlayNative, on
                   </span>
                 </div>
 
-                {/* MAIN ACTION BUTTONS: Centered Vertically in the Middle of the Card */}
-                <div className="flex flex-col sm:flex-row items-stretch gap-4 my-6 py-2">
+                {/* Movie Synopsis */}
+                <p className="text-sm sm:text-base text-neutral-300 leading-relaxed font-normal line-clamp-3 md:line-clamp-4 mb-6 max-w-2xl">
+                  {movie.overview || 'Nenhuma sinopse disponível para este filme no momento.'}
+                </p>
+
+                {/* MAIN ACTION BUTTONS: Positioned in the exact vertical center */}
+                <div className="flex flex-col sm:flex-row items-stretch gap-4 mt-6 mb-2">
                   {/* Button 1: Assistir agora (Web Browser Player) */}
                   <button
                     onClick={() => onPlayWeb(movie)}
@@ -180,11 +185,6 @@ export default function MovieModal({ movie, onClose, onPlayWeb, onPlayNative, on
                     </div>
                   </button>
                 </div>
-
-                {/* Movie Synopsis */}
-                <p className="text-sm sm:text-base text-neutral-300 leading-relaxed font-normal line-clamp-3 md:line-clamp-4 mt-2 max-w-2xl">
-                  {movie.overview || 'Nenhuma sinopse disponível para este filme no momento.'}
-                </p>
               </div>
             </div>
           </div>

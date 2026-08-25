@@ -1,5 +1,9 @@
 export const G_POSTER_PRESETS = [
   // User Requested Specific Movie Posters
+  { key: 'lupin iii: the first', poster: 'https://m.media-amazon.com/images/M/MV5BM2UwMjlmZWEtZjBiMi00ZmJmLTg1MDAtOWQ4NjFjMTY5MzhkXkEyXkFqcGc@._V1_.jpg' },
+  { key: 'lupin iii - the first', poster: 'https://m.media-amazon.com/images/M/MV5BM2UwMjlmZWEtZjBiMi00ZmJmLTg1MDAtOWQ4NjFjMTY5MzhkXkEyXkFqcGc@._V1_.jpg' },
+  { key: 'lupin the first', poster: 'https://m.media-amazon.com/images/M/MV5BM2UwMjlmZWEtZjBiMi00ZmJmLTg1MDAtOWQ4NjFjMTY5MzhkXkEyXkFqcGc@._V1_.jpg' },
+  { key: 'lupin 3rd the first', poster: 'https://m.media-amazon.com/images/M/MV5BM2UwMjlmZWEtZjBiMi00ZmJmLTg1MDAtOWQ4NjFjMTY5MzhkXkEyXkFqcGc@._V1_.jpg' },
   { key: 'gigante de ferro', poster: 'https://play-lh.googleusercontent.com/dx_4A3IfPJaFk2OdpldURP3x3Eqwt0KWvXuBmCMSUXOf_QLGOBMR86IlKBRusVl2SfDp' },
   { key: 'o gigante de ferro', poster: 'https://play-lh.googleusercontent.com/dx_4A3IfPJaFk2OdpldURP3x3Eqwt0KWvXuBmCMSUXOf_QLGOBMR86IlKBRusVl2SfDp' },
   { key: 'iron giant', poster: 'https://play-lh.googleusercontent.com/dx_4A3IfPJaFk2OdpldURP3x3Eqwt0KWvXuBmCMSUXOf_QLGOBMR86IlKBRusVl2SfDp' },

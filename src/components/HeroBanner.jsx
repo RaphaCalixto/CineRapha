@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Play, MonitorPlay, Info, Star, Clock, Calendar, Film } from 'lucide-react';
+import { Play, MonitorPlay, Info, Film } from 'lucide-react';
 import { getPosterUrl } from '../utils/posterHelper';
 
 export default function HeroBanner({ movie, onPlayWeb, onPlayNative, onOpenDetails }) {
@@ -7,13 +7,10 @@ export default function HeroBanner({ movie, onPlayWeb, onPlayNative, onOpenDetai
 
   if (!movie) {
     return (
-      <div className="relative w-full h-[65vh] bg-gradient-to-br from-neutral-900 via-[#181818] to-black flex items-center justify-center text-center px-4">
+      <div className="relative w-full h-[60vh] bg-gradient-to-br from-neutral-900 via-[#181818] to-black flex items-center justify-center text-center px-4">
         <div className="max-w-md">
           <Film className="w-16 h-16 text-[#E50914] mx-auto mb-4 animate-pulse" />
           <h2 className="text-3xl font-extrabold text-white mb-2">Bem-vindo ao CineRapha</h2>
-          <p className="text-neutral-400 text-sm">
-            Varrendo seus filmes no disco local (E:\)...
-          </p>
         </div>
       </div>
     );
@@ -25,107 +22,81 @@ export default function HeroBanner({ movie, onPlayWeb, onPlayNative, onOpenDetai
   const posterThumb = getPosterUrl(rawPoster);
 
   return (
-    <div className="relative w-full h-[80vh] md:h-[88vh] overflow-hidden bg-black flex items-end">
-      {/* Background Hero Image */}
+    <div className="relative w-full min-h-[75vh] md:min-h-[82vh] overflow-hidden bg-black flex items-center justify-center px-4 sm:px-8 py-20">
+      {/* Full Background Hero Image with Blur Overlay */}
       {bgImage ? (
         <img
           src={bgImage}
           alt={movie.title}
           onError={() => setImageError(true)}
-          className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.6] scale-105 transition-all duration-700"
+          className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.35] blur-[2px] scale-105 transition-all duration-700"
         />
       ) : (
         <div className="absolute inset-0 bg-gradient-to-br from-neutral-900 via-[#1f1f1f] to-black" />
       )}
 
-      {/* Hero Dark Gradient Overlays */}
-      <div className="absolute inset-0 hero-side-gradient" />
-      <div className="absolute inset-0 hero-gradient" />
+      {/* Dark Vignette & Gradient Overlays */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/40" />
 
-      {/* Hero Content Container */}
-      <div className="relative z-20 px-6 md:px-16 pb-16 max-w-6xl animate-fade-in flex flex-col md:flex-row items-start md:items-end gap-8 w-full">
-        {/* Optional Poster Thumb */}
-        {posterThumb && (
-          <img
-            src={posterThumb}
-            alt={movie.title}
-            className="w-44 md:w-56 aspect-[2/3] object-cover rounded-2xl shadow-2xl border-2 border-white/20 shrink-0 hidden sm:block hover:scale-105 transition-transform"
-          />
-        )}
+      {/* FLOATING CARD CONTAINER (Matching Image 1 Reference) */}
+      <div className="relative z-20 w-full max-w-4xl bg-[#1e2028]/90 backdrop-blur-2xl border border-white/15 rounded-[32px] p-6 sm:p-8 md:p-10 shadow-[0_30px_70px_rgba(0,0,0,0.85)] animate-fade-in flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10">
+        
+        {/* Left Column: Poster + DISCO LOCAL underneath */}
+        <div className="flex flex-col items-center shrink-0">
+          {posterThumb && (
+            <img
+              src={posterThumb}
+              alt={movie.title}
+              className="w-40 sm:w-48 md:w-52 aspect-[2/3] object-cover rounded-2xl border border-white/20 shadow-2xl transition-transform hover:scale-105"
+            />
+          )}
+          <span className="text-[11px] font-black tracking-widest text-neutral-300 uppercase mt-3.5 text-center">
+            DISCO LOCAL
+          </span>
+        </div>
 
-        <div className="flex-1 min-w-0">
-          {/* Metadata Badges */}
-          <div className="flex flex-wrap items-center gap-3 mb-4 text-xs md:text-sm font-bold">
-            {movie.vote_average > 0 && (
-              <span className="inline-flex items-center justify-center gap-1.5 bg-[#f5c518] text-black px-4 py-1.5 rounded-lg font-black shadow-lg shrink-0">
-                <Star className="w-4 h-4 fill-black shrink-0" />
-                <span>{movie.vote_average}</span>
-              </span>
-            )}
-            {movie.release_year && (
-              <span className="inline-flex items-center justify-center gap-1.5 bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-lg text-white border border-white/15 shrink-0">
-                <Calendar className="w-4 h-4 text-neutral-300 shrink-0" />
-                <span>{movie.release_year}</span>
-              </span>
-            )}
-            {movie.runtime > 0 && (
-              <span className="inline-flex items-center justify-center gap-1.5 bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-lg text-white border border-white/15 shrink-0">
-                <Clock className="w-4 h-4 text-neutral-300 shrink-0" />
-                <span>{Math.floor(movie.runtime / 60)}h {movie.runtime % 60}m</span>
-              </span>
-            )}
-            <span className="bg-[#E50914] text-white px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider shadow-md shrink-0">
-              DISCO LOCAL
-            </span>
+        {/* Right Column: Title, Subtitle/Overview, Action Buttons & Info */}
+        <div className="flex-1 text-left flex flex-col justify-between self-stretch pt-2">
+          <div>
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight tracking-tight mb-3">
+              {movie.title}
+            </h1>
+            <p className="text-sm sm:text-base text-neutral-300 font-medium leading-relaxed mb-6 line-clamp-3">
+              {movie.overview || `Série animada ocidental: ${movie.title}`}
+            </p>
           </div>
 
-          {/* Title */}
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white leading-tight mb-3 tracking-tight drop-shadow-2xl">
-            {movie.title}
-          </h1>
+          <div>
+            {/* Buttons Row (Rounded Pill Buttons matching Image 1) */}
+            <div className="flex flex-wrap items-center gap-3.5 sm:gap-4 mb-5">
+              <button
+                onClick={() => onPlayWeb(movie)}
+                className="bg-[#E50914] hover:bg-[#b80710] active:scale-95 text-white font-bold px-6 sm:px-8 py-3.5 rounded-full flex items-center justify-center gap-2.5 text-sm sm:text-base shadow-lg shadow-[#E50914]/40 transition-all cursor-pointer whitespace-nowrap"
+              >
+                <Play className="w-4 h-4 sm:w-5 sm:h-5 fill-white shrink-0" />
+                <span>Abrir no Navegador</span>
+              </button>
 
-          {/* Genres */}
-          {movie.genres && movie.genres.length > 0 && (
-            <p className="text-sm md:text-base text-neutral-300 font-semibold mb-4">
-              {movie.genres.join(' • ')}
-            </p>
-          )}
+              <button
+                onClick={() => onPlayNative(movie)}
+                className="bg-white/10 hover:bg-white/20 active:scale-95 text-white border border-white/25 font-bold px-6 sm:px-8 py-3.5 rounded-full flex items-center justify-center gap-2.5 text-sm sm:text-base transition-all cursor-pointer whitespace-nowrap backdrop-blur-md"
+              >
+                <MonitorPlay className="w-4 h-4 sm:w-5 sm:h-5 text-white shrink-0" />
+                <span>Abrir no Windows</span>
+              </button>
+            </div>
 
-          {/* Synopsis */}
-          <p className="text-sm md:text-base text-neutral-200 line-clamp-3 md:line-clamp-4 max-w-3xl mb-8 leading-relaxed font-normal drop-shadow">
-            {movie.overview}
-          </p>
-
-          {/* LARGE HERO ACTION BUTTONS */}
-          <div className="flex flex-wrap items-center gap-4">
-            {/* Play Web Button */}
-            <button
-              onClick={() => onPlayWeb(movie)}
-              className="bg-[#E50914] hover:bg-[#b80710] active:scale-95 text-white font-black py-4 px-8 min-w-[230px] rounded-2xl flex items-center justify-center gap-3 text-base shadow-xl shadow-[#E50914]/40 transition-all cursor-pointer whitespace-nowrap shrink-0"
-            >
-              <Play className="w-5 h-5 fill-white shrink-0" />
-              <span>Assistir no Navegador</span>
-            </button>
-
-            {/* Play Native Button */}
-            <button
-              onClick={() => onPlayNative(movie)}
-              className="bg-white/20 hover:bg-white/30 active:scale-95 text-white font-black py-4 px-8 min-w-[210px] rounded-2xl flex items-center justify-center gap-3 text-base backdrop-blur-md border border-white/25 transition-all cursor-pointer whitespace-nowrap shrink-0"
-            >
-              <MonitorPlay className="w-5 h-5 text-white shrink-0" />
-              <span>Abrir no Windows</span>
-            </button>
-
-            {/* Details Trigger */}
+            {/* Info (i) Icon Button */}
             <button
               onClick={() => onOpenDetails(movie)}
-              className="p-4 rounded-2xl bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/20 transition-all hover:scale-105 cursor-pointer shrink-0"
+              className="p-2.5 rounded-full border border-white/25 text-neutral-300 hover:text-white hover:border-white transition-all cursor-pointer inline-flex items-center justify-center hover:scale-110"
               title="Mais Informações"
             >
-              <Info className="w-6 h-6" />
+              <Info className="w-5 h-5" />
             </button>
           </div>
         </div>
+
       </div>
     </div>
   );

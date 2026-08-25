@@ -310,11 +310,11 @@ export default function App() {
                 }}
               />
 
-              <div className="mt-8 sm:mt-12 relative z-30 space-y-8 sm:space-y-10">
+              <div className="mt-14 sm:mt-20 relative z-30 space-y-12 sm:space-y-16">
                 {/* 1. Animes Row on Início */}
                 {animeSeries.length > 0 && (
-                  <div className="px-8 sm:px-14 md:px-20 mb-10 sm:mb-12">
-                    <h2 className="text-xl md:text-2xl font-black text-white mb-6 sm:mb-8 flex items-center gap-2">
+                  <div className="px-8 sm:px-14 md:px-20 mb-14 sm:mb-16">
+                    <h2 className="text-xl md:text-2xl font-black text-white mb-10 sm:mb-12 flex items-center gap-2">
                       <Sparkles className="w-6 h-6 text-[#E50914]" />
                       <span>⛩️ Séries de Anime em Destaque (G:\ANIMES)</span>
                     </h2>

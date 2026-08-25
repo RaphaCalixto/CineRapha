@@ -62,10 +62,10 @@ export default function MovieRow({ title, movies, onOpenDetails }) {
   };
 
   return (
-    <div className="relative mb-14 sm:mb-16 px-6 md:px-16 group">
+    <div className="relative mb-20 sm:mb-24 px-6 md:px-16 group">
       {/* Row Header */}
       {title && (
-        <div className="flex items-center justify-between mb-6 sm:mb-8">
+        <div className="flex items-center justify-between mb-10 sm:mb-12">
           <div className="flex items-center gap-3">
             <h2 className="brand-font text-xl md:text-2xl font-black text-white tracking-wide">
               {title}

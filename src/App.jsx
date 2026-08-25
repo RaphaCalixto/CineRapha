@@ -182,12 +182,32 @@ export default function App() {
     );
   }, [disneyMovies, searchTerm]);
 
-  // Featured Hero Movie
+  // Featured Hero Movie (Fixed on Avatar: A Lenda de Korra - Season 3 Banner)
   const featuredHeroMovie = useMemo(() => {
-    if (liveActionMovies.length === 0) return movies[0] || null;
-    const withBackdrop = liveActionMovies.filter(m => m.backdrop_path || m.poster_path);
-    return withBackdrop.length > 0 ? withBackdrop[0] : liveActionMovies[0];
-  }, [movies, liveActionMovies]);
+    const season3KorraBanner = 'https://media.kitsu.app/anime/8077/poster_image/776bafbd00a4e5122c1fce210730fc72.jpg';
+    const korraSeries = series.find(s => s.title.toLowerCase().includes('korra'));
+    if (korraSeries) {
+      return {
+        ...korraSeries,
+        poster_path: season3KorraBanner,
+        backdrop_path: season3KorraBanner,
+        poster_original: season3KorraBanner,
+        isSeries: true
+      };
+    }
+    return {
+      id: 'series-a-lenda-de-korra',
+      title: 'Avatar: A Lenda de Korra',
+      category: 'western_series',
+      overview: 'Korra, uma jovem impulsiva e destemida da Tribo da Água do Sul, assume o papel de Avatar enfrentando novos desafios na moderna Cidade República.',
+      poster_path: season3KorraBanner,
+      backdrop_path: season3KorraBanner,
+      vote_average: 8.5,
+      release_year: '2012-2014',
+      genres: ['Animação', 'Ação', 'Aventura', 'Fantasia'],
+      isSeries: true
+    };
+  }, [series]);
 
   // Categorized Rows for Início
   const recentlyAdded = useMemo(() => {
@@ -234,9 +254,27 @@ export default function App() {
             <>
               <HeroBanner
                 movie={featuredHeroMovie}
-                onPlayWeb={(m) => setPlayingWebMovie(m)}
-                onPlayNative={handlePlayNative}
-                onOpenDetails={(m) => setSelectedMovie(m)}
+                onPlayWeb={(m) => {
+                  if (m.isSeries || m.seasons) {
+                    setSelectedSeries(m);
+                  } else {
+                    setPlayingWebMovie(m);
+                  }
+                }}
+                onPlayNative={(m) => {
+                  if (m.isSeries || m.seasons) {
+                    setSelectedSeries(m);
+                  } else {
+                    handlePlayNative(m);
+                  }
+                }}
+                onOpenDetails={(m) => {
+                  if (m.isSeries || m.seasons) {
+                    setSelectedSeries(m);
+                  } else {
+                    setSelectedMovie(m);
+                  }
+                }}
               />
 
               <div className="-mt-12 relative z-30 space-y-4">

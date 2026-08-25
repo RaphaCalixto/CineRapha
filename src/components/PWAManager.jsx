@@ -90,10 +90,10 @@ export default function PWAManager() {
         <div className="fixed bottom-6 left-6 z-50 animate-bounce-slow">
           <button
             onClick={handleInstallClick}
-            className="bg-gradient-to-r from-[#E50914] to-[#B20710] hover:from-[#f6121d] hover:to-[#c80812] text-white text-xs font-black px-5 py-3 rounded-2xl flex items-center gap-2.5 shadow-2xl shadow-[#E50914]/40 border border-red-500/40 cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95"
+            className="bg-gradient-to-r from-[#E50914] to-[#B20710] hover:from-[#f6121d] hover:to-[#c80812] text-white text-sm sm:text-base font-black px-7 sm:px-9 py-4 sm:py-4.5 rounded-full flex items-center justify-center gap-3 shadow-[0_15px_40px_rgba(229,9,20,0.5)] border border-red-500/50 cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 whitespace-nowrap min-w-[220px]"
           >
-            <Download className="w-4 h-4 text-white animate-pulse" />
-            <span>Instalar App CineRapha</span>
+            <Download className="w-5 h-5 text-white animate-pulse shrink-0" />
+            <span className="tracking-wide">Instalar App CineRapha</span>
           </button>
         </div>
       )}

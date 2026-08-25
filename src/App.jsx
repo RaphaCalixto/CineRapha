@@ -216,7 +216,7 @@ export default function App() {
 
   // Featured Hero Movie (Fixed on Avatar: A Lenda de Korra - Season 3 Banner)
   const featuredHeroMovie = useMemo(() => {
-    const season3KorraBanner = 'https://media.kitsu.app/anime/8077/poster_image/776bafbd00a4e5122c1fce210730fc72.jpg';
+    const season3KorraBanner = '/images/avatar-a-lenda-de-korra-season-3.jpg';
     const korraSeries = series.find(s => s.title.toLowerCase().includes('korra'));
     if (korraSeries) {
       return {

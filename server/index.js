@@ -19,6 +19,10 @@ app.use(cors());
 app.use(express.json());
 
 // Serve static build & PWA public assets
+const imagesPath = path.join(__dirname, '../public/images');
+if (fs.existsSync(imagesPath)) {
+  app.use('/images', express.static(imagesPath));
+}
 const distPath = path.join(__dirname, '../dist');
 if (fs.existsSync(distPath)) {
   app.use(express.static(distPath));

@@ -68,22 +68,32 @@ export default function HeroBanner({ movie, onPlayWeb, onPlayNative, onOpenDetai
           </div>
 
           <div>
-            {/* Buttons Row (Rounded Pill Buttons matching Image 1) */}
+            {/* Buttons Row (Exact match to Movie Modal buttons) */}
             <div className="flex flex-wrap items-center gap-3.5 sm:gap-4 mb-5">
               <button
                 onClick={() => onPlayWeb(movie)}
-                className="bg-[#E50914] hover:bg-[#b80710] active:scale-95 text-white font-bold px-6 sm:px-8 py-3.5 rounded-full flex items-center justify-center gap-2.5 text-sm sm:text-base shadow-lg shadow-[#E50914]/40 transition-all cursor-pointer whitespace-nowrap"
+                className="bg-gradient-to-r from-[#E50914] to-[#B20710] hover:from-[#f6121d] hover:to-[#c80812] text-white px-6 py-3 rounded-2xl flex items-center gap-3.5 shadow-xl shadow-[#E50914]/40 border border-red-500/40 cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95"
               >
-                <Play className="w-4 h-4 sm:w-5 sm:h-5 fill-white shrink-0" />
-                <span>Abrir no Navegador</span>
+                <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+                  <Play className="w-5 h-5 fill-white text-white ml-0.5" />
+                </div>
+                <div className="text-left">
+                  <span className="block font-extrabold text-white text-base leading-tight">Assistir agora</span>
+                  <span className="block text-[11px] text-white/80 font-normal">Reproduzir no navegador</span>
+                </div>
               </button>
 
               <button
                 onClick={() => onPlayNative(movie)}
-                className="bg-white/10 hover:bg-white/20 active:scale-95 text-white border border-white/25 font-bold px-6 sm:px-8 py-3.5 rounded-full flex items-center justify-center gap-2.5 text-sm sm:text-base transition-all cursor-pointer whitespace-nowrap backdrop-blur-md"
+                className="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-6 py-3 rounded-2xl flex items-center gap-3.5 backdrop-blur-md cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95"
               >
-                <MonitorPlay className="w-4 h-4 sm:w-5 sm:h-5 text-white shrink-0" />
-                <span>Abrir no Windows</span>
+                <div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                  <MonitorPlay className="w-5 h-5 text-white" />
+                </div>
+                <div className="text-left">
+                  <span className="block font-extrabold text-white text-base leading-tight">Abrir no Windows</span>
+                  <span className="block text-[11px] text-neutral-300 font-normal">Assistir no seu player local</span>
+                </div>
               </button>
             </div>
 

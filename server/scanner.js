@@ -209,7 +209,8 @@ export async function scanMovies(customDirs = null) {
       const omdbData = await fetchOmdbAnimationMovie(fItem.fileName, fItem.fileName);
       const title = omdbData?.title || fItem.fileName.replace(/\.(mp4|mkv|avi|mov|wmv)$/i, '');
       const presetPoster = getGDrivePoster(title) || getGDrivePoster(fItem.fileName);
-      const poster = presetPoster || omdbData?.poster_path || null;
+      const existingItem = (db.movies || []).find(m => m.filePath.toLowerCase() === fItem.filePath.toLowerCase() || m.title === title);
+      const poster = existingItem?.poster_path || presetPoster || omdbData?.poster_path || null;
       
       const animMovieObj = {
         id: Buffer.from(fItem.filePath).toString('hex').slice(0, 16),
@@ -218,18 +219,18 @@ export async function scanMovies(customDirs = null) {
         cleanTitle: title,
         title: title,
         original_title: title,
-        overview: omdbData?.overview || 'Filme de animação ocidental.',
+        overview: existingItem?.overview || omdbData?.overview || 'Filme de animação ocidental.',
         poster_path: poster,
         poster_original: poster,
         backdrop_path: poster,
-        release_year: omdbData?.release_year || '2020',
-        vote_average: omdbData?.vote_average || 7.5,
-        runtime: 90,
-        genres: omdbData?.genres || ['Animação'],
-        cast: [],
+        release_year: existingItem?.release_year || omdbData?.release_year || '2020',
+        vote_average: existingItem?.vote_average || omdbData?.vote_average || 7.5,
+        runtime: existingItem?.runtime || 90,
+        genres: existingItem?.genres || omdbData?.genres || ['Animação'],
+        cast: existingItem?.cast || [],
         category: 'western_animation',
         isAnimation: true,
-        addedAt: new Date().toISOString()
+        addedAt: existingItem?.addedAt || new Date().toISOString()
       };
       
       if (!updatedMovies.some(m => m.filePath.toLowerCase() === fItem.filePath.toLowerCase())) {
@@ -247,8 +248,9 @@ export async function scanMovies(customDirs = null) {
       const rawName = aMovie.fileName.replace(/\.(mp4|mkv|avi|mov|wmv)$/i, '');
       const presetPoster = getGDrivePoster(aMovie.fileName) || getGDrivePoster(aMovie.filePath) || getGDrivePoster(rawName) || getGDrivePoster(aMovie.cleanTitle);
       const omdbData = !presetPoster ? await fetchOmdbAnimationMovie(aMovie.cleanTitle || rawName, aMovie.fileName) : null;
-      const poster = presetPoster || omdbData?.poster_path;
-      const title = omdbData?.title || aMovie.cleanTitle || rawName;
+      const title = aMovie.cleanTitle || omdbData?.title || rawName;
+      const existingItem = (db.movies || []).find(m => m.filePath.toLowerCase() === aMovie.filePath.toLowerCase() || m.title === title);
+      const poster = existingItem?.poster_path || presetPoster || omdbData?.poster_path;
       
       const animeMovieObj = {
         id: Buffer.from(aMovie.filePath).toString('hex').slice(0, 16),
@@ -257,18 +259,18 @@ export async function scanMovies(customDirs = null) {
         cleanTitle: title,
         title: title,
         original_title: title,
-        overview: omdbData?.overview || `Filme de anime: ${title}`,
+        overview: existingItem?.overview || omdbData?.overview || `Filme de anime: ${title}`,
         poster_path: poster,
         poster_original: poster,
         backdrop_path: poster,
-        release_year: omdbData?.release_year || '2020',
-        vote_average: omdbData?.vote_average || 8.2,
-        runtime: 105,
-        genres: omdbData?.genres || ['Animação', 'Anime', 'Fantasia'],
-        cast: [],
+        release_year: existingItem?.release_year || omdbData?.release_year || '2020',
+        vote_average: existingItem?.vote_average || omdbData?.vote_average || 8.2,
+        runtime: existingItem?.runtime || 105,
+        genres: existingItem?.genres || omdbData?.genres || ['Animação', 'Anime', 'Fantasia'],
+        cast: existingItem?.cast || [],
         category: 'animes',
         isAnimation: true,
-        addedAt: new Date().toISOString()
+        addedAt: existingItem?.addedAt || new Date().toISOString()
       };
       
       if (!updatedMovies.some(m => m.filePath.toLowerCase() === aMovie.filePath.toLowerCase())) {
@@ -281,7 +283,8 @@ export async function scanMovies(customDirs = null) {
     for (const dMovie of gDriveResult.disneyMoviesList) {
       const omdbData = await fetchOmdbAnimationMovie(dMovie.cleanTitle, dMovie.fileName);
       const title = dMovie.cleanTitle || omdbData?.title || dMovie.fileName;
-      const poster = omdbData?.poster_path || getGDrivePoster(title);
+      const existingItem = (db.movies || []).find(m => m.filePath.toLowerCase() === dMovie.filePath.toLowerCase() || m.title === title);
+      const poster = existingItem?.poster_path || omdbData?.poster_path || getGDrivePoster(title);
       
       const disneyMovieObj = {
         id: Buffer.from(dMovie.filePath).toString('hex').slice(0, 16),
@@ -290,18 +293,18 @@ export async function scanMovies(customDirs = null) {
         cleanTitle: title,
         title: title,
         original_title: title,
-        overview: omdbData?.overview || `Animação Disney/Pixar/DreamWorks: ${title}`,
+        overview: existingItem?.overview || omdbData?.overview || `Animação Disney/Pixar/DreamWorks: ${title}`,
         poster_path: poster,
         poster_original: poster,
         backdrop_path: poster,
-        release_year: omdbData?.release_year || '2020',
-        vote_average: omdbData?.vote_average || 8.0,
-        runtime: 95,
-        genres: omdbData?.genres || ['Animação', 'Família'],
-        cast: [],
+        release_year: existingItem?.release_year || omdbData?.release_year || '2020',
+        vote_average: existingItem?.vote_average || omdbData?.vote_average || 8.0,
+        runtime: existingItem?.runtime || 95,
+        genres: existingItem?.genres || omdbData?.genres || ['Animação', 'Família'],
+        cast: existingItem?.cast || [],
         category: 'disney',
         isAnimation: true,
-        addedAt: new Date().toISOString()
+        addedAt: existingItem?.addedAt || new Date().toISOString()
       };
       
       if (!updatedMovies.some(m => m.filePath.toLowerCase() === dMovie.filePath.toLowerCase())) {

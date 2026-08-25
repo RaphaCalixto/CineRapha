@@ -9,6 +9,7 @@ import SeriesModal from './components/SeriesModal';
 import VideoPlayerModal from './components/VideoPlayerModal';
 import MatchModal from './components/MatchModal';
 import SettingsModal from './components/SettingsModal';
+import PWAManager from './components/PWAManager';
 import { getPosterUrl } from './utils/posterHelper';
 import { RefreshCw, FolderOpen, CheckCircle2, Tv, Film, Sparkles, Heart } from 'lucide-react';
 
@@ -558,6 +559,9 @@ export default function App() {
           onScanTriggered={handleTriggerScan}
         />
       )}
+
+      {/* PWA Registration, Auto-Update Toast & Install Banner */}
+      <PWAManager />
     </div>
   );
 }

@@ -1,0 +1,42 @@
+{
+  "name": "CineRapha - Streaming & Biblioteca",
+  "short_name": "CineRapha",
+  "description": "Sua biblioteca e plataforma de streaming pessoal de filmes, séries e animes.",
+  "start_url": "/",
+  "id": "cinerapha-pwa",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0b0b0b",
+  "theme_color": "#E50914",
+  "scope": "/",
+  "categories": [
+    "entertainment",
+    "movies"
+  ],
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/maskable-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

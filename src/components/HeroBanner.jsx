@@ -22,24 +22,25 @@ export default function HeroBanner({ movie, onPlayWeb, onPlayNative, onOpenDetai
   const posterThumb = getPosterUrl(rawPoster);
 
   return (
-    <div className="relative w-full min-h-[75vh] md:min-h-[82vh] overflow-hidden bg-black flex items-center justify-center px-4 sm:px-8 py-20">
-      {/* Full Background Hero Image with Blur Overlay */}
+    <div className="relative w-full h-[80vh] md:h-[88vh] overflow-hidden bg-black flex items-end justify-start px-6 md:px-16 pb-12 md:pb-16">
+      {/* Background Hero Image */}
       {bgImage ? (
         <img
           src={bgImage}
           alt={movie.title}
           onError={() => setImageError(true)}
-          className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.35] blur-[2px] scale-105 transition-all duration-700"
+          className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.55] scale-105 transition-all duration-700"
         />
       ) : (
         <div className="absolute inset-0 bg-gradient-to-br from-neutral-900 via-[#1f1f1f] to-black" />
       )}
 
-      {/* Dark Vignette & Gradient Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/40" />
+      {/* Hero Dark Gradient Overlays */}
+      <div className="absolute inset-0 hero-side-gradient" />
+      <div className="absolute inset-0 hero-gradient" />
 
-      {/* FLOATING CARD CONTAINER (Matching Image 1 Reference) */}
-      <div className="relative z-20 w-full max-w-4xl bg-[#1e2028]/90 backdrop-blur-2xl border border-white/15 rounded-[32px] p-6 sm:p-8 md:p-10 shadow-[0_30px_70px_rgba(0,0,0,0.85)] animate-fade-in flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10">
+      {/* FLOATING CARD CONTAINER (Positioned on the Left Side) */}
+      <div className="relative z-20 w-full max-w-3xl lg:max-w-4xl bg-[#1c1e24]/85 backdrop-blur-2xl border border-white/15 rounded-[32px] p-6 sm:p-8 md:p-9 shadow-[0_30px_70px_rgba(0,0,0,0.85)] animate-fade-in flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8">
         
         {/* Left Column: Poster + DISCO LOCAL underneath */}
         <div className="flex flex-col items-center shrink-0">

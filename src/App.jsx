@@ -11,12 +11,36 @@ import MatchModal from './components/MatchModal';
 import SettingsModal from './components/SettingsModal';
 import PWAManager from './components/PWAManager';
 import { getPosterUrl } from './utils/posterHelper';
-import { RefreshCw, FolderOpen, CheckCircle2, Tv, Film, Sparkles, Heart } from 'lucide-react';
+import { RefreshCw, FolderOpen, CheckCircle2, Tv, Film, Sparkles, Heart, ServerOff } from 'lucide-react';
+import initialLibrary from '../server/library.json';
+
+const getInitialMovies = () => {
+  try {
+    const cached = localStorage.getItem('cinerapha_movies');
+    if (cached) {
+      const parsed = JSON.parse(cached);
+      if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+    }
+  } catch (e) {}
+  return initialLibrary.movies || [];
+};
+
+const getInitialSeries = () => {
+  try {
+    const cached = localStorage.getItem('cinerapha_series');
+    if (cached) {
+      const parsed = JSON.parse(cached);
+      if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+    }
+  } catch (e) {}
+  return initialLibrary.series || [];
+};
 
 export default function App() {
-  const [movies, setMovies] = useState([]);
-  const [series, setSeries] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [movies, setMovies] = useState(getInitialMovies);
+  const [series, setSeries] = useState(getInitialSeries);
+  const [loading, setLoading] = useState(false);
+  const [isServerOnline, setIsServerOnline] = useState(true);
   const [activeTab, setActiveTab] = useState('inicio'); // 'inicio' | 'filmes' | 'animacoes' | 'animes' | 'disney'
   const [searchTerm, setSearchTerm] = useState('');
   const [scanStatus, setScanStatus] = useState({ isScanning: false, progress: 0, total: 0 });
@@ -36,15 +60,23 @@ export default function App() {
         fetch('/api/movies'),
         fetch('/api/series')
       ]);
-      const dataMovies = await resMovies.json();
-      const dataSeries = await resSeries.json();
+      if (resMovies.ok && resSeries.ok) {
+        const dataMovies = await resMovies.json();
+        const dataSeries = await resSeries.json();
 
-      if (dataMovies.movies) setMovies(dataMovies.movies);
-      if (dataSeries.series) setSeries(dataSeries.series);
+        if (dataMovies.movies && dataMovies.movies.length > 0) {
+          setMovies(dataMovies.movies);
+          try { localStorage.setItem('cinerapha_movies', JSON.stringify(dataMovies.movies)); } catch (e) {}
+        }
+        if (dataSeries.series && dataSeries.series.length > 0) {
+          setSeries(dataSeries.series);
+          try { localStorage.setItem('cinerapha_series', JSON.stringify(dataSeries.series)); } catch (e) {}
+        }
+        setIsServerOnline(true);
+      }
     } catch (err) {
-      console.error('Erro ao buscar catálogo:', err);
-    } finally {
-      setLoading(false);
+      console.warn('[CineRapha] Servidor local indisponível. Exibindo catálogo em cache.', err);
+      setIsServerOnline(false);
     }
   };
 
@@ -239,6 +271,7 @@ export default function App() {
         scanStatus={scanStatus}
         onTriggerScan={handleTriggerScan}
         onOpenSettings={() => setIsSettingsOpen(true)}
+        isServerOnline={isServerOnline}
       />
 
       {/* Main Content Area */}

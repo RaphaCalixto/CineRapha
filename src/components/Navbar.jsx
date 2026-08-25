@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Film, Settings, RefreshCw, X, FolderSearch } from 'lucide-react';
+import { Film, Settings, RefreshCw, X, FolderSearch, ServerOff } from 'lucide-react';
 
 export default function Navbar({
   activeTab,
@@ -9,6 +9,7 @@ export default function Navbar({
   scanStatus,
   onTriggerScan,
   onOpenSettings,
+  isServerOnline = true
 }) {
   const [scrolled, setScrolled] = useState(false);
 
@@ -160,6 +161,17 @@ export default function Navbar({
             </button>
           )}
         </div>
+
+        {/* Server Offline Warning Badge */}
+        {!isServerOnline && (
+          <div
+            title="O servidor Express local não foi detectado. O catálogo está sendo exibido via cache offline."
+            className="flex items-center gap-2 bg-yellow-500/20 border border-yellow-500/40 text-yellow-300 text-xs px-4 py-2.5 rounded-full font-bold shrink-0 animate-pulse"
+          >
+            <ServerOff className="w-4 h-4 text-yellow-400" />
+            <span className="hidden sm:inline">Servidor Offline (Modo Cache)</span>
+          </div>
+        )}
 
         {/* Scanner Status Badge */}
         {scanStatus?.isScanning ? (

@@ -33,9 +33,30 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
+
+  // Network-First with Cache Fallback for API Catalog endpoints
+  if (event.request.method === 'GET' && (url.pathname === '/api/movies' || url.pathname === '/api/series')) {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          if (response && response.status === 200) {
+            const responseClone = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseClone));
+          }
+          return response;
+        })
+        .catch(() => {
+          return caches.match(event.request);
+        })
+    );
+    return;
+  }
+
+  // Bypass SW for all other /api/ routes (video streaming, scan, play-native)
   if (url.pathname.startsWith('/api/') || event.request.method !== 'GET') {
     return;
   }
+
   if (event.request.mode === 'navigate') {
     event.respondWith(
       fetch(event.request)
@@ -50,6 +71,7 @@ self.addEventListener('fetch', (event) => {
     );
     return;
   }
+
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       const fetchPromise = fetch(event.request)

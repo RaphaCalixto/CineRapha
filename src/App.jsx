@@ -310,11 +310,14 @@ export default function App() {
                 }}
               />
 
-              <div className="mt-14 sm:mt-20 relative z-30 space-y-12 sm:space-y-16">
+              <div className="relative z-30 space-y-6 sm:space-y-8">
                 {/* 1. Animes Row on Início */}
                 {animeSeries.length > 0 && (
-                  <div className="px-8 sm:px-14 md:px-20 mb-14 sm:mb-16">
-                    <h2 className="text-xl md:text-2xl font-black text-white mb-10 sm:mb-12 flex items-center gap-2">
+                  <div className="px-8 sm:px-14 md:px-20 mb-8 sm:mb-10">
+                    <h2
+                      className="text-xl md:text-2xl font-black text-white flex items-center gap-2"
+                      style={{ marginTop: '36px', marginBottom: '22px' }}
+                    >
                       <Sparkles className="w-6 h-6 text-[#E50914]" />
                       <span>⛩️ Séries de Anime em Destaque (G:\ANIMES)</span>
                     </h2>
@@ -395,7 +398,10 @@ export default function App() {
               className="px-8 sm:px-14 md:px-20 pb-24"
               style={{ paddingTop: '210px' }}
             >
-              <div className="flex items-center gap-3 mb-10 sm:mb-12 border-b border-white/10 pb-4">
+              <div
+                className="flex items-center gap-3 border-b border-white/10 pb-4"
+                style={{ marginTop: '20px', marginBottom: '24px' }}
+              >
                 <Film className="w-8 h-8 text-[#E50914]" />
                 <h1 className="text-3xl font-black text-white">Filmes Live-Action (Disco E:\)</h1>
                 <span className="text-sm font-bold px-3 py-1 rounded-full bg-white/10 text-neutral-300">
@@ -419,13 +425,16 @@ export default function App() {
           {/* TAB 3: ANIMAÇÕES OCIDENTAIS - EXCLUSIVE TO F:\Animação Ocidental */}
           {(activeTab === 'animacoes' || (searchTerm && (westernSeries.length > 0 || filteredWesternAnimationMovies.length > 0))) && (
             <div
-              className="px-8 sm:px-14 md:px-20 pb-24 space-y-16 sm:space-y-20"
+              className="px-8 sm:px-14 md:px-20 pb-24 space-y-12 sm:space-y-16"
               style={{ paddingTop: '210px' }}
             >
               {/* 1. SECTION: SÉRIES ANIMADAS */}
               {westernSeries.length > 0 && (
                 <div>
-                  <div className="flex items-center gap-3 mb-8 sm:mb-10 border-b border-white/10 pb-4">
+                  <div
+                    className="flex items-center gap-3 border-b border-white/10 pb-4"
+                    style={{ marginTop: '20px', marginBottom: '24px' }}
+                  >
                     <Tv className="w-7 h-7 text-[#E50914]" />
                     <h2 className="text-2xl font-black text-white">Séries Animadas Ocidentais (F:\)</h2>
                     <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-white/10 text-neutral-300">
@@ -450,7 +459,10 @@ export default function App() {
               {/* 2. SECTION: FILMES ANIMADOS OCIDENTAIS */}
               {filteredWesternAnimationMovies.length > 0 && (
                 <div>
-                  <div className="flex items-center gap-3 mb-8 sm:mb-10 border-b border-white/10 pb-4">
+                  <div
+                    className="flex items-center gap-3 border-b border-white/10 pb-4"
+                    style={{ marginTop: '36px', marginBottom: '24px' }}
+                  >
                     <Film className="w-7 h-7 text-[#E50914]" />
                     <h2 className="text-2xl font-black text-white">Filmes de Animação Ocidental</h2>
                     <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-white/10 text-neutral-300">
@@ -476,13 +488,16 @@ export default function App() {
           {/* TAB 4: ANIMES - EXCLUSIVE TO G:\ANIMES */}
           {activeTab === 'animes' && (
             <div
-              className="px-8 sm:px-14 md:px-20 pb-24 space-y-16 sm:space-y-20"
+              className="px-8 sm:px-14 md:px-20 pb-24 space-y-12 sm:space-y-16"
               style={{ paddingTop: '210px' }}
             >
               {/* SÉRIES DE ANIME */}
               {filteredAnimeSeries.length > 0 && (
                 <div>
-                  <div className="flex items-center gap-3 mb-8 sm:mb-10 border-b border-white/10 pb-4">
+                  <div
+                    className="flex items-center gap-3 border-b border-white/10 pb-4"
+                    style={{ marginTop: '20px', marginBottom: '24px' }}
+                  >
                     <Sparkles className="w-7 h-7 text-[#E50914]" />
                     <h2 className="text-2xl font-black text-white">Séries de Anime (Com Temporadas)</h2>
                     <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-white/10 text-neutral-300">
@@ -507,7 +522,10 @@ export default function App() {
               {/* FILMES DE ANIME */}
               {filteredAnimeMovies.length > 0 && (
                 <div>
-                  <div className="flex items-center gap-3 mb-8 sm:mb-10 border-b border-white/10 pb-4">
+                  <div
+                    className="flex items-center gap-3 border-b border-white/10 pb-4"
+                    style={{ marginTop: '36px', marginBottom: '24px' }}
+                  >
                     <Film className="w-7 h-7 text-[#E50914]" />
                     <h2 className="text-2xl font-black text-white">Filmes de Anime</h2>
                     <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-white/10 text-neutral-300">
@@ -536,7 +554,10 @@ export default function App() {
               className="px-8 sm:px-14 md:px-20 pb-24"
               style={{ paddingTop: '210px' }}
             >
-              <div className="flex items-center gap-3 mb-10 sm:mb-12 border-b border-white/10 pb-4">
+              <div
+                className="flex items-center gap-3 border-b border-white/10 pb-4"
+                style={{ marginTop: '20px', marginBottom: '24px' }}
+              >
                 <Heart className="w-8 h-8 text-[#E50914]" />
                 <h1 className="text-3xl font-black text-white">Disney, Pixar & DreamWorks (Disco G:\)</h1>
                 <span className="text-sm font-bold px-3 py-1 rounded-full bg-white/10 text-neutral-300">

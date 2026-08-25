@@ -22,7 +22,7 @@ export default function HeroBanner({ movie, onPlayWeb, onPlayNative, onOpenDetai
   const posterThumb = getPosterUrl(rawPoster);
 
   return (
-    <div className="relative w-full h-[80vh] md:h-[88vh] overflow-hidden bg-black flex items-end justify-start px-6 md:px-16 pb-12 md:pb-16">
+    <div className="relative w-full min-h-[640px] md:min-h-[700px] pt-28 pb-14 px-6 md:px-16 overflow-hidden bg-black flex items-end justify-start mb-10 md:mb-14">
       {/* Background Hero Image */}
       {bgImage ? (
         <img

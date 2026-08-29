@@ -8,7 +8,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "server": "node server/index.js",
-    "start": "concurrently \"npm run server\" \"npm run dev\""
+    "start": "concurrently \"npm run server\" \"npm run dev\"",
+    "app": "electron electron/main.cjs",
+    "start:native": "electron electron/main.cjs"
   },
   "dependencies": {
     "axios": "^1.7.9",
@@ -25,6 +27,7 @@
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.3.4",
     "concurrently": "^9.1.2",
+    "electron": "^44.0.0",
     "tailwindcss": "^4.3.3",
     "vite": "^6.1.0"
   }

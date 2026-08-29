@@ -256,6 +256,18 @@ function setupWatcher() {
     });
 }
 
+// Wildcard route to serve Vite SPA index.html
+app.get('*', (req, res, next) => {
+  if (req.path.startsWith('/api') || req.path.startsWith('/images')) {
+    return next();
+  }
+  const indexPath = path.join(__dirname, '../dist/index.html');
+  if (fs.existsSync(indexPath)) {
+    return res.sendFile(indexPath);
+  }
+  next();
+});
+
 // Start Server and Initial Scan
 app.listen(PORT, async () => {
   console.log(`====================================================`);

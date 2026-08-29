@@ -2061,7 +2061,7 @@
       "cast": [],
       "category": "western_animation",
       "isAnimation": true,
-      "addedAt": "2026-08-25T17:51:09.281Z"
+      "addedAt": "2026-08-25T17:51:04.521Z"
     },
     {
       "id": "463a5c416e696d61",
@@ -4066,21 +4066,22 @@
       "cleanTitle": "Lilo & Stitch",
       "title": "Lilo & Stitch",
       "original_title": "Lilo & Stitch",
-      "overview": "Animação Disney/Pixar/DreamWorks: Lilo & Stitch",
-      "poster_path": "https://m.media-amazon.com/images/S/pv-target-images/0ce5b704f290a64a76634b36d9fc699f1a7fe8a362ae1ffb53d656ae743f0dd6.jpg",
-      "poster_original": "https://m.media-amazon.com/images/S/pv-target-images/0ce5b704f290a64a76634b36d9fc699f1a7fe8a362ae1ffb53d656ae743f0dd6.jpg",
-      "backdrop_path": "https://m.media-amazon.com/images/S/pv-target-images/0ce5b704f290a64a76634b36d9fc699f1a7fe8a362ae1ffb53d656ae743f0dd6.jpg",
-      "release_year": "2020",
-      "vote_average": 8,
-      "runtime": 95,
+      "overview": "Adaptação em live-action da clássica animação da Disney que narra o encontro emocionante no Havaí entre a pequena e solitária garota Lilo e Stitch, um alienígena geneticamente modificado e extremamente travesso. Juntos, eles aprendem o verdadeiro significado de 'Ohana', que significa que família nunca abandona.",
+      "poster_path": "https://m.media-amazon.com/images/M/MV5BYmFmZjM1ZTEtYzQ5ZS00MTRmLTkzMDktYWMxNTg2NGE3YjY4XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+      "poster_original": "https://m.media-amazon.com/images/M/MV5BYmFmZjM1ZTEtYzQ5ZS00MTRmLTkzMDktYWMxNTg2NGE3YjY4XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+      "backdrop_path": "https://m.media-amazon.com/images/M/MV5BYmFmZjM1ZTEtYzQ5ZS00MTRmLTkzMDktYWMxNTg2NGE3YjY4XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+      "release_year": "2025",
+      "vote_average": 7.4,
+      "runtime": 120,
       "genres": [
-        "Animação",
-        "Família"
+        "Animation",
+        "Adventure",
+        "Comedy"
       ],
       "cast": [],
       "category": "disney",
       "isAnimation": true,
-      "addedAt": "2026-08-25T17:51:12.422Z"
+      "addedAt": "2026-08-23T03:46:48.169Z"
     },
     {
       "id": "473a5c4469736e65",
@@ -6003,7 +6004,7 @@
       "searchQuery": "Frieren: Beyond Journey's End",
       "poster_path": "https://m.media-amazon.com/images/M/MV5BZTI4ZGMxN2UtODlkYS00MTBjLWE1YzctYzc3NDViMGI0ZmJmXkEyXkFqcGc@._V1_SX300.jpg",
       "backdrop_path": "https://m.media-amazon.com/images/M/MV5BZTI4ZGMxN2UtODlkYS00MTBjLWE1YzctYzc3NDViMGI0ZmJmXkEyXkFqcGc@._V1_SX300.jpg",
-      "overview": "Após derrotarem o Rei Demônio e salvarem o mundo, o grupo de heróis se desfaz. Sendo uma elfa quase imortal, Frieren testemunha seus antigos companheiros envelhecerem e partirem, iniciando uma nova jornada para entender os sentimentos humanos e honrar as memórias do passado.",
+      "overview": "Série de anime: Frieren e a Jornada para o Além",
       "seasons": {
         "1": [
           {
@@ -6289,7 +6290,7 @@
       "searchQuery": "Death Parade",
       "poster_path": "https://media.kitsu.app/anime/poster_images/9969/original.png",
       "backdrop_path": "https://media.kitsu.app/anime/poster_images/9969/original.png",
-      "overview": "Após a morte, humanos que faleceram ao mesmo tempo são enviados para o misterioso bar Quindecim, onde o barman e juiz Decim os desafia para jogos de azar mortais que revelam suas verdadeiras naturezas para decidir se suas almas serão reencarnadas ou enviadas ao esquecimento eterno.",
+      "overview": "Série de anime: Death Parade",
       "seasons": {
         "1": [
           {
@@ -6394,7 +6395,7 @@
       "searchQuery": "Fog Hill of Five Elements",
       "poster_path": "https://media.kitsu.app/anime/poster_images/41361/original.jpg",
       "backdrop_path": "https://media.kitsu.app/anime/poster_images/41361/original.jpg",
-      "overview": "Nas antigas montanhas sagradas da China, guerreiros que dominam os cinco elementos da natureza guardam os limites que separam os humanos dos monstros devoradores, até que o roubo de um ser sagrado desencadeia batalhas ferozes com artes marciais espetaculares.",
+      "overview": "Série de anime: Fog Hill of Five Elements",
       "seasons": {
         "1": [
           {
@@ -6463,7 +6464,7 @@
       "searchQuery": "Sound! Euphonium",
       "poster_path": "https://m.media-amazon.com/images/M/MV5BYTk2NGZmZWItNjhmNS00ZjViLTk2NDQtZmY1YWYyNmY3MTYzXkEyXkFqcGc@._V1_SX300.jpg",
       "backdrop_path": "https://m.media-amazon.com/images/M/MV5BYTk2NGZmZWItNjhmNS00ZjViLTk2NDQtZmY1YWYyNmY3MTYzXkEyXkFqcGc@._V1_SX300.jpg",
-      "overview": "Kumiko Oumae entra no ensino médio da Escola Kitauji querendo recomeçar do zero, mas é convencida a ingressar na banda de música sinfônica escolar. Sob a orientação de um novo e rigoroso professor, os alunos enfrentam rivalidades, inseguranças e dedicação para alcançar o cobiçado campeonato nacional.",
+      "overview": "Série de anime: Hibike! Euphonium",
       "seasons": {
         "1": [
           {
@@ -6766,7 +6767,7 @@
       "searchQuery": "Land of the Lustrous",
       "poster_path": "https://media.kitsu.app/anime/13521/poster_image/740b51f22eb9f5cc6211d7ba63a5b58d.png",
       "backdrop_path": "https://media.kitsu.app/anime/13521/poster_image/740b51f22eb9f5cc6211d7ba63a5b58d.png",
-      "overview": "Em um futuro distante, a Terra é habitada por 28 gemas vivas e imortais que lutam contra os misteriosos seres Lunares, que buscam capturá-las para transformá-las em adornos. A frágil e curiosa Fosfofilita (Phos) busca encontrar seu verdadeiro propósito e desvendar os segredos de seu mundo.",
+      "overview": "Série de anime: Houseki no Kuni (Land of the Lustrous)",
       "seasons": {
         "1": [
           {
@@ -6864,7 +6865,7 @@
       "searchQuery": "Kill la Kill",
       "poster_path": "https://media.kitsu.app/anime/poster_images/7712/original.jpg",
       "backdrop_path": "https://media.kitsu.app/anime/poster_images/7712/original.jpg",
-      "overview": "Ryuko Matoi viaja pelo Japão em busca do assassino de seu pai portando metade de uma gigantesca lâmina-tesoura. Suas pistas a levam à autoritária Academia Honnouji, onde a presidente do conselho estudantil Satsuki Kiryuin concede trajes especiais que dão poderes sobre-humanos aos alunos.",
+      "overview": "Série de anime: KILL la KILL",
       "seasons": {
         "1": [
           {
@@ -7053,7 +7054,7 @@
       "searchQuery": "Beyond the Boundary",
       "poster_path": "https://m.media-amazon.com/images/M/MV5BZDFmNzZjMzItNmQ0Yy00NjFlLWJjNGEtMDNmMWMyMGE1ODM3XkEyXkFqcGc@._V1_SX300.jpg",
       "backdrop_path": "https://m.media-amazon.com/images/M/MV5BZDFmNzZjMzItNmQ0Yy00NjFlLWJjNGEtMDNmMWMyMGE1ODM3XkEyXkFqcGc@._V1_SX300.jpg",
-      "overview": "Akihito Kanbara é um estudante metade humano e metade monstro imortal. Um dia, ele salva a tímida Mirai Kuriyama, a última sobrevivente de um clã de guerreiros do mundo espiritual capazes de manipular o próprio sangue para exterminar espíritos corrompidos.",
+      "overview": "Série de anime: Kyoukai no Kanata (Beyond the Boundary)",
       "seasons": {
         "1": [
           {
@@ -7151,7 +7152,7 @@
       "searchQuery": "Lord of Mysteries",
       "poster_path": "https://m.media-amazon.com/images/M/MV5BMWE1ZWYwZGUtZjRmOS00NzUzLTlkZmUtMTEwMjNhNTVmNDIwXkEyXkFqcGc@._V1_SX300.jpg",
       "backdrop_path": "https://m.media-amazon.com/images/M/MV5BMWE1ZWYwZGUtZjRmOS00NzUzLTlkZmUtMTEwMjNhNTVmNDIwXkEyXkFqcGc@._V1_SX300.jpg",
-      "overview": "Zhou Mingrui acorda no corpo de Klein Moretti em um mundo vitoriano repleto de vapor, sociedades secretas e poderes sobrenaturais arcanos. Para sobreviver e desvendar os mistérios de sua transmigração, ele sobe pelas sequências arcanas dos caminhos divinos sob o título de 'O Louco'.",
+      "overview": "Série de anime: Lord of Mysteries",
       "seasons": {
         "1": [
           {
@@ -7256,7 +7257,7 @@
       "searchQuery": "Lupin the Third: The Woman Called Fujiko Mine",
       "poster_path": "https://m.media-amazon.com/images/M/MV5BYmY2ODI1YTYtZDQ4Zi00NDU0LWFkMzktOGEyMzJjYzU0OTc0XkEyXkFqcGc@._V1_SX300.jpg",
       "backdrop_path": "https://m.media-amazon.com/images/M/MV5BYmY2ODI1YTYtZDQ4Zi00NDU0LWFkMzktOGEyMzJjYzU0OTc0XkEyXkFqcGc@._V1_SX300.jpg",
-      "overview": "A série explora o passado e as origens da sedutora e perigosa ladra Fujiko Mine, revelando seus primeiros e misteriosos encontros com Arsène Lupin III, o atirador Daisuke Jigen, o espadachim Goemon Ishikawa XIII e o inspetor Zenigata.",
+      "overview": "Série de anime: Lupin III: A Mulher Chamada Fujiko Mine",
       "seasons": {
         "1": [
           {
@@ -7361,7 +7362,7 @@
       "searchQuery": "Monster",
       "poster_path": "https://m.media-amazon.com/images/M/MV5BYzU2MWQ5NGQtYmNlMC00ZjJkLWJmODItZDM5MDM3YmUyMWJkXkEyXkFqcGc@._V1_SX300.jpg",
       "backdrop_path": "https://m.media-amazon.com/images/M/MV5BYzU2MWQ5NGQtYmNlMC00ZjJkLWJmODItZDM5MDM3YmUyMWJkXkEyXkFqcGc@._V1_SX300.jpg",
-      "overview": "Kenzou Tenma é um brilhante neurocirurgião japonês que trabalha na Alemanha. Ele decide arriscar sua carreira para salvar a vida de um menino baleado em vez do prefeito da cidade. Anos depois, Tenma descobre com horror que o garoto que salvou tornou-se um serial killer carismático e psicopata.",
+      "overview": "Série de anime: Monster",
       "seasons": {
         "1": [
           {
@@ -7893,7 +7894,7 @@
       "searchQuery": "The Apothecary Diaries",
       "poster_path": "https://m.media-amazon.com/images/M/MV5BNjAxMmFjZjgtYjM1ZS00NzdmLTliZDktZmIyMzU5YTBlNDBmXkEyXkFqcGc@._V1_SX300.jpg",
       "backdrop_path": "https://m.media-amazon.com/images/M/MV5BNjAxMmFjZjgtYjM1ZS00NzdmLTliZDktZmIyMzU5YTBlNDBmXkEyXkFqcGc@._V1_SX300.jpg",
-      "overview": "Maomao é uma jovem boticária perspicaz sequestrada e vendida como serva no palácio imperial. Quando descobre a causa da misteriosa doença que aflige os bebês do imperador, ela chama a atenção do influente eunuco Jinshi e passa a solucionar intrigas e mistérios médicos na corte.",
+      "overview": "Série de anime: O Diário de uma Apotecária",
       "seasons": {
         "1": [
           {
@@ -8249,7 +8250,7 @@
       "searchQuery": "A Place Further Than the Universe",
       "poster_path": "https://m.media-amazon.com/images/M/MV5BNmQzYjI2NjgtMDY1Yy00OWViLWE3NjUtZmQxZTYwMzRhYzY1XkEyXkFqcGc@._V1_SX300.jpg",
       "backdrop_path": "https://m.media-amazon.com/images/M/MV5BNmQzYjI2NjgtMDY1Yy00OWViLWE3NjUtZmQxZTYwMzRhYzY1XkEyXkFqcGc@._V1_SX300.jpg",
-      "overview": "Mari Tamaki é uma estudante do ensino médio que teme passar a juventude sem realizar nada marcante. Ela se junta a Shirase, uma jovem determinada a viajar até a Antártica para encontrar pistas sobre sua mãe desaparecida, embarcando em uma emocionante jornada ao fim do mundo.",
+      "overview": "Série de anime: A Place Further Than the Universe",
       "seasons": {
         "1": [
           {
@@ -8354,7 +8355,7 @@
       "searchQuery": "Gurren Lagann",
       "poster_path": "https://media.kitsu.app/anime/poster_images/1801/original.jpg",
       "backdrop_path": "https://media.kitsu.app/anime/poster_images/1801/original.jpg",
-      "overview": "Simon e Kamina nascem e vivem em uma aldeia subterrânea sem conhecer o céu. Ao encontrarem um pequeno mecha e uma broca mística, eles quebram a superfície e lideram a humanidade em uma batalha épica e crescente contra os homens-fera e as forças cósmicas do universo.",
+      "overview": "Série de anime: Tengen Toppa Gurren Lagann",
       "seasons": {
         "1": [
           {
@@ -8564,7 +8565,7 @@
       "searchQuery": "Violet Evergarden",
       "poster_path": "https://media.kitsu.app/anime/poster_images/12230/original.jpg",
       "backdrop_path": "https://media.kitsu.app/anime/poster_images/12230/original.jpg",
-      "overview": "Violet Evergarden, uma jovem criada unicamente como arma de guerra que perdeu os dois braços em batalha, tenta se reintegrar à sociedade após o fim do conflito. Trabalhando como 'Boneca de Memórias Automáticas', ela escreve cartas para outras pessoas enquanto busca compreender as últimas palavras do Major Gilbert: 'Eu te amo'.",
+      "overview": "Série de anime: Violet Evergarden",
       "seasons": {
         "1": [
           {
@@ -8669,5 +8670,5 @@
       }
     }
   ],
-  "lastScan": "2026-08-25T17:51:12.424Z"
+  "lastScan": "2026-08-25T19:30:41.997Z"
 }
